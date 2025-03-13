@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon index.ts",
-    "build": " prisma generate && tsc"
+    "build": " prisma generate && tsc",
+    "postinstall": "prisma generate"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
