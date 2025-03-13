@@ -14,22 +14,23 @@ datasource db {
 }
 
 model User {
-  id             String          @id @default(uuid())
-  name           String
-  userRole       UserRole        @default(Customer)
-  email          String?
-  SupportTickets SupportTicket[]
+  id         String  @id @default(uuid())
+  name       String
+  authorized Boolean @default(true)
+  // userRole       UserRole        @default(Customer)
+  // email          String?
+  // SupportTickets SupportTicket[]
 }
 
-model SupportTicket {
-  id        String   @id @default(uuid())
-  author    User     @relation(fields: [userId], references: [id])
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    String
-}
+// model SupportTicket {
+//   id        String   @id @default(uuid())
+//   author    User     @relation(fields: [userId], references: [id])
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   userId    String
+// }
 
-enum UserRole {
-  Customer
-  Admin
-}
+// enum UserRole {
+//   Customer
+//   Admin
+// }
